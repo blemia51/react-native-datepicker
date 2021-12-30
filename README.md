@@ -4,7 +4,7 @@ React Native DatePicker component for both Android and iOS, using DatePickerAndr
 ## Install
 
 ```bash
-yarn add https://github.com/wgltony/react-native-datepicker
+yarn add @react-native-community/datetimepicker https://github.com/wgltony/react-native-datepicker
 ```
 
 ## Example
