@@ -197,10 +197,10 @@ class DatePicker extends Component {
     }, 200);
   }
 
-  onDatePicked({action, year, month, day}) {
+  onDatePicked({action, day, month, year}) {
     if (action !== DatePickerAndroid.dismissedAction) {
       this.setState({
-        date: new Date(year, month, day)
+        date: new Date(day, month, year)
       });
       this.datePicked();
     } else {
