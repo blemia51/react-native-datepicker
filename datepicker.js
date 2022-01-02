@@ -17,8 +17,8 @@ import Moment from 'moment';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 const FORMATS = {
-  'date': 'YYYY-MM-DD',
-  'datetime': 'YYYY-MM-DD HH:mm',
+  'date':'DD-MM-YYYY',
+  'datetime': 'DD-MM-YYYY HH:mn',
   'time': 'HH:mm'
 };
 
@@ -219,11 +219,11 @@ class DatePicker extends Component {
     }
   }
 
-  onDatetimePicked({action, year, month, day}) {
+  onDatetimePicked({action, day, month, year}) {
     if (action !== DatePickerAndroid.dismissedAction) {
       this.setState({
         isPicker: true,
-        date: new Date(year, month, day)
+        date: new Date(day, month, year)
       });
     } else {
       this.onPressCancel();
@@ -451,6 +451,7 @@ DatePicker.defaultProps = {
   customStyles: {},
 
   // whether or not show the icon
+  format: 'DD-MM-YYYY',
   showIcon: true,
   disabled: false,
   allowFontScaling: true,
